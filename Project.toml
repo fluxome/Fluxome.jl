@@ -9,6 +9,8 @@ DifferentialEquations = "0c46a032-eb83-5123-abaf-570d42b7fbaa"
 FiniteStateProjection = "069e79ea-d681-44e8-b935-95bdaf9e8f28"
 JumpProcesses = "ccbc3e58-028d-4f4c-8cd5-9ae44345cda5"
 OrdinaryDiffEq = "1dea7af3-3e70-54e6-95c3-0bf5283fa5ed"
+Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
+PyPlot = "d330b81b-6aea-500a-939a-2ce795aea3ee"
 
 [compat]
 julia = "1.8"
