@@ -1,7 +1,8 @@
 name = "fluxome"
 uuid = "54968383-114b-4554-bbd1-63ec7383be7b"
 authors = ["Biotheory Lab"]
-version = "1.0.0-DEV"
+version = "0.0.0-DEV"
+
 
 [compat]
 julia = "1.8"
