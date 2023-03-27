@@ -19,14 +19,24 @@ jobs:
       matrix:
         version:
           - '1.8'
-          - 'nightly'
+          # - 'nightly'
         os:
           - ubuntu-latest
         arch:
           - x64
-          - x86
+          # - x86
     steps:
       - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install graphviz
+          python -m pip install --upgrade pip
+          pip install matplotlib
       - uses: julia-actions/setup-julia@v1
         with:
           version: ${{ matrix.version }}
@@ -46,6 +56,16 @@ jobs:
       statuses: write
     steps:
       - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install graphviz
+          python -m pip install --upgrade pip
+          pip install matplotlib
       - uses: julia-actions/setup-julia@v1
         with:
           version: '1'

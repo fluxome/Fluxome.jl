@@ -1,6 +1,7 @@
-using fluxome
 using Test
+using Documenter
+using fluxome
 
 @testset "fluxome.jl" begin
-    # Write your tests here.
+    doctest(fluxome)
 end
