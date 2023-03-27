@@ -15,10 +15,6 @@ A composite type representing a reaction network, its initial state, time span, 
 
 # Examples
 ```jldoctest
-using FiniteStateProjection
-using DifferentialEquations
-using PyPlot
-
 using fluxome
 
 # Define the reaction network and the report path
