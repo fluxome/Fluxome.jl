@@ -1,0 +1,3 @@
+# https://domluna.github.io/JuliaFormatter.jl/stable/
+style = "sciml"
+ignore = ["test"]
