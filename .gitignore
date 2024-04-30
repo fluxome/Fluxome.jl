@@ -4,6 +4,7 @@
 scratch.jl
 .env
 .CondaPkg/
+/.direnv/
 /docs/build/
 reports/
 !reports/.gitkeep
