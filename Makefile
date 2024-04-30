@@ -80,7 +80,7 @@ check: lint test docs
 
 
 #-----------------
-##@ Github
+##@ GitHub
 #-----------------
 
 ghsecrets: ## Update github secrets for GH_REPO from ".env" file.
@@ -112,3 +112,41 @@ ratchet-unpin: ## Unpin hashed workflow versions to semantic values. (requires d
 
 ratchet-update: ## Unpin hashed workflow versions to semantic values. (requires docker).
 	$(foreach workflow,$(GHA_WORKFLOWS),$(call ratchet,update $(workflow));)
+
+#------
+##@ Nix
+#------
+
+meta: ## Generate nix flake metadata.
+	nix flake metadata --impure --accept-flake-config
+	nix flake show --impure --accept-flake-config
+
+up: ## Update nix flake lock file.
+	nix flake update --impure --accept-flake-config
+	nix flake check --impure --accept-flake-config
+
+dup: ## Debug update nix flake lock file.
+	nix flake update --impure --accept-flake-config
+	nix flake check --show-trace --print-build-logs --impure --accept-flake-config
+
+nix-lint: ## Lint nix files.
+	nix fmt
+
+NIX_DERIVATION_PATH ?= $(shell which julia)
+
+closure-size: ## Print nix closure size for a given path. make -n closure-size NIX_DERIVATION_PATH=$(which julia)
+	nix path-info -Sh $(NIX_DERIVATION_PATH)
+
+re: ## Reload direnv.
+	direnv reload
+
+al: ## Enable direnv.
+	direnv allow
+
+nix-default: ## Build default nix derivation.
+	nix build .#default \
+	--accept-flake-config \
+	--impure \
+	--fallback \
+	--keep-going \
+	--print-build-logs
