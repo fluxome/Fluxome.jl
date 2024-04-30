@@ -201,6 +201,6 @@ jobs:
         shell: julia --project=docs --color=yes {0}
         run: |
           using Documenter: DocMeta, doctest
-          using fluxome
-          DocMeta.setdocmeta!(fluxome, :DocTestSetup, :(using fluxome); recursive=true)
-          doctest(fluxome)
+          using Fluxome
+          DocMeta.setdocmeta!(Fluxome, :DocTestSetup, :(using Fluxome); recursive=true)
+          doctest(Fluxome)
