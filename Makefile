@@ -57,9 +57,9 @@ docs: ## Build documentation
 		Pkg.develop(PackageSpec(path=pwd())); \
 		Pkg.instantiate(); \
 		using Documenter: DocMeta, doctest; \
-		using fluxome; \
-		DocMeta.setdocmeta!(fluxome, :DocTestSetup, :(using fluxome); recursive=true); \
-		doctest(fluxome)'
+		using Fluxome; \
+		DocMeta.setdocmeta!(Fluxome, :DocTestSetup, :(using Fluxome); recursive=true); \
+		doctest(Fluxome)'
 
 .PHONY: check
 check: lint test docs ## Run all checks
