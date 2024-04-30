@@ -1,0 +1,24 @@
+pull_request_rules:
+  - name: self-assign PRs
+    conditions:
+      - -merged
+      - -closed
+      - "#assignee=0"
+    actions:
+      assign:
+        add_users:
+          - "{{ author }}"
+  - name: automatic merge
+    conditions:
+      - "#approved-reviews-by>=1"
+      - label!=work-in-progress
+      - check-success=CI / Julia 1.8 - ubuntu-latest - x64
+    actions:
+      queue:
+        name: default
+queue_rules:
+  - name: default
+    merge_method: fast-forward
+    update_method: rebase
+    # update_bot_account: fluxome-bot
+    # merge_bot_account: fluxome-bot
