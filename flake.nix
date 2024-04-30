@@ -33,18 +33,22 @@
             allowUnfree = true;
           };
         };
-      in {
-        formatter = pkgs.alejandra;
 
-        devShells = {
-          default = pkgs.mkShell {
-            buildInputs = with pkgsUnstable; [
+        devShell = pkgs.mkShell {
+          buildInputs = with pkgsUnstable;
+            [
               bottom
               gh
               graphite-cli
               julia-bin
-            ];
-          };
+            ]
+            ++ (lib.optional pkgs.stdenv.isLinux autoPatchelfHook);
+        };
+      in {
+        formatter = pkgs.alejandra;
+
+        devShells = {
+          default = devShell;
         };
       }
     );
