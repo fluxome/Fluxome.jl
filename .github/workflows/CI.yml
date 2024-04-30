@@ -56,7 +56,7 @@ concurrency:
   cancel-in-progress: ${{ startsWith(github.ref, 'refs/pull/') }}
 
 jobs:
-  duplicate_job_check:
+  duplicate-job-check:
     # continue-on-error: true
     runs-on: ubuntu-latest
     outputs:
@@ -74,8 +74,8 @@ jobs:
           do_not_skip: '["pull_request", "workflow_dispatch", "schedule"]'
 
   set-variables:
-    needs: [duplicate_job_check]
-    if: needs.duplicate_job_check.outputs.should_skip != 'true'
+    needs: [duplicate-job-check]
+    if: needs.duplicate-job-check.outputs.should_skip != 'true'
     runs-on: ubuntu-latest
     outputs:
       debug: ${{ steps.set-variables.outputs.debug }}
