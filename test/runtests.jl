@@ -1,7 +1,7 @@
 using Test
 using Documenter
-using fluxome
+using Fluxome
 
-@testset "fluxome.jl" begin
-    doctest(fluxome)
+@testset "Fluxome.jl" begin
+    doctest(Fluxome)
 end
