@@ -66,7 +66,7 @@ jobs:
       contents: read
     steps:
       - id: skip_check
-        uses: fkirc/skip-duplicate-actions@v5
+        uses: fkirc/skip-duplicate-actions@f75f66ce1886f00957d99748a42c724f4330bdcf # ratchet:fkirc/skip-duplicate-actions@v5
         with:
           concurrent_skipping: 'never'
           skip_after_successful_duplicate: 'true'
@@ -144,12 +144,12 @@ jobs:
           - x64
           # - x86
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # ratchet:actions/checkout@v4
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # ratchet:actions/checkout@v4
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install graphviz
-      - uses: julia-actions/setup-julia@ac0d62164df5a47de404f4e96ce86a1a28a28d56 # ratchet:julia-actions/setup-julia@v1
+      - uses: julia-actions/setup-julia@f2258781c657ad9b4b88072c5eeaf9ec8c370874 # ratchet:julia-actions/setup-julia@v2
         with:
           version: ${{ matrix.version }}
           arch: ${{ matrix.arch }}
@@ -175,12 +175,12 @@ jobs:
       contents: write
       statuses: write
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # ratchet:actions/checkout@v4
+      - uses: actions/checkout@0ad4b8fadaa221de15dcec353f45205ec38ea70b # ratchet:actions/checkout@v4
       - name: Install dependencies
         run: |
           sudo apt-get update
           sudo apt-get install graphviz
-      - uses: julia-actions/setup-julia@ac0d62164df5a47de404f4e96ce86a1a28a28d56 # ratchet:julia-actions/setup-julia@v1
+      - uses: julia-actions/setup-julia@f2258781c657ad9b4b88072c5eeaf9ec8c370874 # ratchet:julia-actions/setup-julia@v2
         with:
           version: '1'
       - uses: julia-actions/cache@dc1a3cdeacb521b0ca93cfc66143fcadb15a5bd0 # ratchet:julia-actions/cache@v1
