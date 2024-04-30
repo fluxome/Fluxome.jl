@@ -1,14 +1,14 @@
 ```@meta
-CurrentModule = fluxome
+CurrentModule = Fluxome
 ```
 
-# fluxome
+# Fluxome
 
-Documentation for [fluxome](https://github.com/fluxome/fluxome.jl).
+Documentation for [Fluxome](https://github.com/fluxome/Fluxome.jl).
 
 ```@index
 ```
 
 ```@autodocs
-Modules = [fluxome]
+Modules = [Fluxome]
 ```
