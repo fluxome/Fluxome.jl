@@ -1,6 +1,8 @@
 *.jl.*.cov
 *.jl.cov
 *.jl.mem
+scratch.jl
+/.CondaPkg/
 /docs/build/
 reports/
 !reports/.gitkeep
