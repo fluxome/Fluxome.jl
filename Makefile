@@ -61,6 +61,10 @@ docs: ## Build documentation
 		DocMeta.setdocmeta!(fluxome, :DocTestSetup, :(using fluxome); recursive=true); \
 		doctest(fluxome)'
 
+.PHONY: check
+check: lint test docs ## Run all checks
+check: ## Run all checks
+
 
 #-----------------
 ##@ Github
