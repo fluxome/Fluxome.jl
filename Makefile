@@ -34,11 +34,24 @@ help-targets: ## Print commands for all targets matching a given pattern. eval "
 ##@ CI tasks
 #-----------------
 
+.PHONY: install
+install: ## Install package
+	@echo "Installing package"
+	julia -e '\
+		using Pkg; \
+		Pkg.activate("."); \
+		Pkg.instantiate();'
+
 .PHONY: lint
 lint: ## Lint julia files
+	@echo "Linting"
 	julia -e '\
+		using Pkg; \
+		Pkg.activate("."); \
+		Pkg.instantiate(); \
 		using JuliaFormatter; \
-		format(".")'
+		format("./src", verbose=true); \
+		format("./test", verbose=true);'
 
 .PHONY: test
 test: ## Run tests
@@ -62,8 +75,8 @@ docs: ## Build documentation
 		doctest(Fluxome)'
 
 .PHONY: check
-check: lint test docs ## Run all checks
 check: ## Run all checks
+check: lint test docs
 
 
 #-----------------
