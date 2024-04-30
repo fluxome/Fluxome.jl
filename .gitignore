@@ -2,7 +2,8 @@
 *.jl.cov
 *.jl.mem
 scratch.jl
-/.CondaPkg/
+.env
+.CondaPkg/
 /docs/build/
 reports/
 !reports/.gitkeep
