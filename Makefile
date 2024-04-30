@@ -80,3 +80,22 @@ ghsecrets: ## Update github secrets for GH_REPO from ".env" file.
 	@echo secrets after updates:
 	@echo
 	PAGER=cat gh secret list --repo=$(GH_REPO)
+
+GHA_WORKFLOWS := \
+	.github/workflows/CI.yml \
+	.github/workflows/CompatHelper.yml \
+	.github/workflows/TagBot.yml \
+	.github/workflows/pr-check.yaml \
+	.github/workflows/pr-merge.yaml \
+	.github/workflows/labeler.yml
+
+ratchet = docker run -it --rm -v "${PWD}:${PWD}" -w "${PWD}" ghcr.io/sethvargo/ratchet:0.9.2 $1
+
+ratchet-pin: ## Pin all workflow versions to hash values. (requires docker).
+	$(foreach workflow,$(GHA_WORKFLOWS),$(call ratchet,pin $(workflow));)
+
+ratchet-unpin: ## Unpin hashed workflow versions to semantic values. (requires docker).
+	$(foreach workflow,$(GHA_WORKFLOWS),$(call ratchet,unpin $(workflow));)
+
+ratchet-update: ## Unpin hashed workflow versions to semantic values. (requires docker).
+	$(foreach workflow,$(GHA_WORKFLOWS),$(call ratchet,update $(workflow));)
