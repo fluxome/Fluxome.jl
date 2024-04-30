@@ -2,7 +2,7 @@
 
 julia_version = "1.10.2"
 manifest_format = "2.0"
-project_hash = "fad5ebaa936475ef90be3eb402a732382e91808c"
+project_hash = "152e390f509b899fe8fbba81fa93dcde23ecbcbf"
 
 [[deps.ADTypes]]
 git-tree-sha1 = "016833eb52ba2d6bea9fcb50ca295980e728ee24"
@@ -637,6 +637,12 @@ deps = ["Statistics"]
 git-tree-sha1 = "335bfdceacc84c5cdf16aadc768aa5ddfc5383cc"
 uuid = "53c48c17-4a7d-5ca2-90c5-79b7896eea93"
 version = "0.8.4"
+
+[[deps.Fluxome]]
+deps = ["Catalyst", "Debugger", "DifferentialEquations", "FiniteStateProjection", "JumpProcesses", "OrdinaryDiffEq", "Plots", "PythonPlot", "Revise"]
+path = "/Users/crs58/projects/fluxome.jl"
+uuid = "54968383-114b-4554-bbd1-63ec7383be7b"
+version = "0.0.0-DEV"
 
 [[deps.Fontconfig_jll]]
 deps = ["Artifacts", "Bzip2_jll", "Expat_jll", "FreeType2_jll", "JLLWrappers", "Libdl", "Libuuid_jll", "Pkg", "Zlib_jll"]
@@ -2305,12 +2311,6 @@ deps = ["Artifacts", "JLLWrappers", "Libdl", "Pkg", "gperf_jll"]
 git-tree-sha1 = "431b678a28ebb559d224c0b6b6d01afce87c51ba"
 uuid = "35ca27e7-8b34-5b7f-bca9-bdc33f59eb06"
 version = "3.2.9+0"
-
-[[deps.fluxome]]
-deps = ["Catalyst", "Debugger", "DifferentialEquations", "FiniteStateProjection", "JumpProcesses", "OrdinaryDiffEq", "Plots", "PythonPlot", "Revise"]
-path = "/Users/crs58/projects/fluxome.jl"
-uuid = "54968383-114b-4554-bbd1-63ec7383be7b"
-version = "0.0.0-DEV"
 
 [[deps.fzf_jll]]
 deps = ["Artifacts", "JLLWrappers", "Libdl"]

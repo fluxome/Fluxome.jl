@@ -1,16 +1,16 @@
-using fluxome
+using Fluxome
 using Documenter
 
-DocMeta.setdocmeta!(fluxome, :DocTestSetup, :(using fluxome); recursive = true)
+DocMeta.setdocmeta!(Fluxome, :DocTestSetup, :(using Fluxome); recursive = true)
 
 makedocs(;
-    modules = [fluxome],
+    modules = [Fluxome],
     authors = "Fluxome Contributors",
-    repo = "https://github.com/fluxome/fluxome.jl/blob/{commit}{path}#{line}",
-    sitename = "fluxome.jl",
+    repo = "https://github.com/fluxome/Fluxome.jl/blob/{commit}{path}#{line}",
+    sitename = "Fluxome.jl",
     format = Documenter.HTML(;
         prettyurls = get(ENV, "CI", "false") == "true",
-        canonical = "https://fluxome.github.io/fluxome.jl",
+        canonical = "https://fluxome.github.io/Fluxome.jl",
         edit_link = "main",
         assets = String[]
     ),
@@ -20,6 +20,6 @@ makedocs(;
 )
 
 deploydocs(;
-    repo = "github.com/fluxome/fluxome.jl",
+    repo = "github.com/fluxome/Fluxome.jl",
     devbranch = "main"
 )
