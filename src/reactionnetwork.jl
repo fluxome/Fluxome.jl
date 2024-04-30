@@ -17,7 +17,7 @@ A composite type representing a reaction network, its initial state, time span, 
 
 # Examples
 ```jldoctest
-using fluxome
+using Fluxome
 
 # Define the reaction network and the report path
 rn = @reaction_network begin

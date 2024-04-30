@@ -1,4 +1,4 @@
-module fluxome
+module Fluxome
 
 # base type and utility methods
 include("reactionnetwork.jl")
