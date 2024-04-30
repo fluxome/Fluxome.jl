@@ -4,7 +4,7 @@ CurrentModule = fluxome
 
 # fluxome
 
-Documentation for [fluxome](https://github.com/biotheorylab/fluxome.jl).
+Documentation for [fluxome](https://github.com/fluxome/fluxome.jl).
 
 ```@index
 ```
