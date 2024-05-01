@@ -163,7 +163,12 @@ function plot_and_save_distribution_timepoints(
             bar_data = u_matrix
         end
 
-        ax = axs.flatten()[id - 1]
+        if num_plots == 1
+            ax = axs[id]
+        else
+            ax = axs.flatten()[id - 1]
+        end
+
         ax.bar(0:(size(rn.u0)[2] - 1), Iterators.flatten(bar_data), width = 1)
         ax.set_title("Distribution at t = $(rt)")
         ax.set_xlabel("# of Molecules")
