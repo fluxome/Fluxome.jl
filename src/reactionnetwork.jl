@@ -2,7 +2,6 @@ using FiniteStateProjection
 using DifferentialEquations
 using PythonPlot
 using Base.Iterators
-using Debugger
 
 """
 ReactionNetworkSimulation(rn::ReactionSystem, reportpath::String, u0::Vector{Float64}, tspan::Tuple{Float64, Float64})
